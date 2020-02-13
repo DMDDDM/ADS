@@ -18,8 +18,6 @@ public class FragmentCenter extends Fragment implements View.OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //    初始化控件
-       View view2 = getActivity().getLayoutInflater().inflate(R.layout.fragment_center,null);
 
     }
 
