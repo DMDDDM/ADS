@@ -13,7 +13,7 @@ public class OrderPage extends AppCompatActivity {
     private int quantity1;
     //  单价
     private float price = 12.81f;
-
+    //this is  test 333
     //初始化控件
     TextView textView ;
     TextView tQuantity;
