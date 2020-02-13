@@ -15,7 +15,7 @@ public class Details extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-        getSupportActionBar().hide();
+        getSupportActionBar().hide();//隐藏标题栏
          mBuy= findViewById(R.id.buy);
         mBuy.setOnClickListener(this);
     }

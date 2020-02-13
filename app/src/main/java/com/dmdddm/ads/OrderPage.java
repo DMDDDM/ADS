@@ -24,7 +24,7 @@ public class OrderPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_page);
-        getSupportActionBar().hide();
+        getSupportActionBar().hide();//隐藏标题栏
 
         final Toast toast = Toast.makeText(this, R.string.toast, Toast.LENGTH_SHORT);
 

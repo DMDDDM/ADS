@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class FragmentCenter extends Fragment {
+public class FragmentCenter extends Fragment implements View.OnClickListener{
 
     public FragmentCenter() {
         // Required empty public constructor
@@ -24,21 +24,40 @@ public class FragmentCenter extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)  {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_center, container, false);
         /**按钮点击页面跳转在这里写***/
+        //初始化按钮
         Button mOrder = view.findViewById(R.id.order);
-        mOrder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),MyOrder.class);
-                startActivity(intent);
-            }
-        });
+        Button mLocation = view.findViewById(R.id.Location);
+        View vCollect = view.findViewById(R.id.Collect);
+
+
+        mOrder.setOnClickListener(this) ;
+        mLocation.setOnClickListener(this);
+        vCollect.setOnClickListener(this);
+
 
         return view;
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.Location:
+                Intent intent = new Intent(getActivity(),Location.class);
+                startActivity(intent);break;
+            case R.id.Collect:
+                Intent intent2 = new Intent(getActivity(),Collect.class);
+                startActivity(intent2);break;
+            case R.id.order:
+                Intent intent3 = new Intent(getActivity(),MyOrder.class);
+                startActivity(intent3);break;
+            default:break;
+
+        }
     }
 
 
