@@ -48,7 +48,7 @@
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="120dp"
-                    android:id=""
+                    android:id="@+id/ItemImg"
                     android:layout_marginLeft="10dp"
                     android:src="@drawable/timg"
                     android:layout_gravity="center"/>
@@ -66,7 +66,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id=""
+                            android:id="@+id/ItemTitle"
                             android:layout_weight="1"
                             android:text="0202期宣传文案厂家直销宣传册定制"
                             android:textSize="15dp"
@@ -92,11 +92,11 @@
 
 
                         <TextView
+                            android:layout_toRightOf="@id/price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="55.00"
                             android:textSize="25dp"
-                            android:layout_toRightOf="@id/price"
                             android:layout_alignParentBottom="true"
                             />
 
