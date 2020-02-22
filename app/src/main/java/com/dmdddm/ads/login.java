@@ -108,6 +108,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         @Override
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
+            /*****/
             if (msg.what == 1){
                 if (result[0].equals("successful")){
                     /**登录成功**/
