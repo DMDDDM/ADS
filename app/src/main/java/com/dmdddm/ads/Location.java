@@ -11,6 +11,6 @@ public class Location extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
         getSupportActionBar().hide();//隐藏标题栏
-        /***...***/
+
     }
 }

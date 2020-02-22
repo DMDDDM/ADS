@@ -3,16 +3,29 @@ package com.dmdddm.ads;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class FragmentCenter extends Fragment implements View.OnClickListener{
+    /**声明控件**/
+    private TextView uName;
 
     public FragmentCenter() {
         // Required empty public constructor
+    }
+    /**页面返回时的调用的方法**/
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1 && resultCode == 2){
+            uName.setText(data.getStringExtra("UserName"));
+        }
     }
 
     @Override
@@ -26,6 +39,14 @@ public class FragmentCenter extends Fragment implements View.OnClickListener{
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_center, container, false);
         /**按钮点击页面跳转在这里写***/
+        final Intent iLogin = new Intent(getActivity(),login.class);
+        uName = view.findViewById(R.id.uName);
+        uName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivityForResult(iLogin ,1);
+            }
+        });
         //初始化按钮
         Button mOrder = view.findViewById(R.id.order);
         Button mLocation = view.findViewById(R.id.Location);
